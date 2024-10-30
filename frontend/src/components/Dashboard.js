@@ -22,7 +22,7 @@ const Dashboard = () => {
 
     const fetchTasks = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/api/tasks');
+            const response = await axios.get('https://taskmanager-2-pcq2.onrender.com/api/tasks');
             setTasks(response.data);
         } catch (error) {
             console.error("Error fetching tasks:", error);
@@ -35,9 +35,9 @@ const Dashboard = () => {
 
         try {
             if (_id) {
-                await axios.put(`http://localhost:4000/api/tasks/${_id}`, { title, description });
+                await axios.put(`https://taskmanager-2-pcq2.onrender.com/api/tasks/${_id}`, { title, description });
             } else {
-                await axios.post('http://localhost:4000/api/tasks', { title, description });
+                await axios.post('https://taskmanager-2-pcq2.onrender.com/api/tasks', { title, description });
             }
             setModalOpen(false);
             setCurrentTask({ title: '', description: '', _id: null });
@@ -53,7 +53,7 @@ const Dashboard = () => {
 
         try {
            
-                await axios.put(`http://localhost:4000/api/tasks/${_id}`, { title, description });
+                await axios.put(`https://taskmanager-2-pcq2.onrender.com/api/tasks/${_id}`, { title, description });
             
             setModalOpen(false);
             setCurrentTask({ title: '', description: '', _id: null });
@@ -74,7 +74,7 @@ const Dashboard = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:4000/api/tasks/${id}`);
+            await axios.delete(`https://taskmanager-2-pcq2.onrender.com/api/tasks/${id}`);
             fetchTasks();
         } catch (error) {
             console.error("Error deleting task:", error);
@@ -104,7 +104,7 @@ const Dashboard = () => {
     
         try {
             // Update the task on the server
-            await axios.put(`http://localhost:4000/api/tasks/${movedTask._id}`, updatedTask);
+            await axios.put(`https://taskmanager-2-pcq2.onrender.com/api/tasks/${movedTask._id}`, updatedTask);
       fetchTasks()
         } catch (error) {
             console.error("Error updating task status:", error);

@@ -31,7 +31,7 @@ const Login = () => {
         }
     
         try {
-            const url = `http://localhost:4000/api/auth/login`;
+            const url = `https://taskmanager-2-pcq2.onrender.com/api/auth/login`;
             
             // Use axios to make the POST request
             const response = await axios.post(url, loginInfo, {
@@ -68,7 +68,7 @@ const Login = () => {
             const emailData = { email: credentialResponseDecoded.email };
             
             // Send a POST request to the backend Google login route
-            const response = await axios.post('http://localhost:4000/api/auth/gooleLogin', emailData, {
+            const response = await axios.post('https://taskmanager-2-pcq2.onrender.com/api/auth/gooleLogin', emailData, {
                 headers: { 'Content-Type': 'application/json' }
             });
     

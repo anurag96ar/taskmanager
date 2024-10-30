@@ -30,7 +30,7 @@ const Signup = () => {
         }
     
         try {
-            const url = `http://localhost:4000/api/auth/signup`;
+            const url = `https://taskmanager-2-pcq2.onrender.com/api/auth/signup`;
             const response = await axios.post(url, signupInfo, {
                 headers: {
                     'Content-Type': 'application/json'
